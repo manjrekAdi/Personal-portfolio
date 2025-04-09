@@ -7,12 +7,12 @@ const Footer = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <p className="text-muted-foreground mb-4 md:mb-0">
-            © {new Date().getFullYear()} Ali Rezaei. All rights reserved.
+            © {new Date().getFullYear()} Aditya Manjrekar. All rights reserved.
           </p>
           
           <div className="flex space-x-6 text-xl text-muted-foreground">
             <a 
-              href="https://github.com/AliRezaei-Code" 
+              href="https://github.com/manjrekAdi" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="hover:text-primary transition-colors"
@@ -21,7 +21,7 @@ const Footer = () => {
               <Github size={20} />
             </a>
             <a 
-              href="https://linkedin.com/in/ali-r-652a7970" 
+              href="https://www.linkedin.com/in/m-adi05/" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="hover:text-primary transition-colors"
@@ -30,14 +30,14 @@ const Footer = () => {
               <Linkedin size={20} />
             </a>
             <a 
-              href="mailto:alirez@my.yorku.ca" 
+              href="mailto:manjrekadi05@gmail.com" 
               className="hover:text-primary transition-colors"
               aria-label="Email"
             >
               <Mail size={20} />
             </a>
             <a 
-              href="tel:+14372389820" 
+              href="tel:+16478681927" 
               className="hover:text-primary transition-colors"
               aria-label="Phone"
             >

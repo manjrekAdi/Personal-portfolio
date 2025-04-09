@@ -205,8 +205,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-medium mb-1">Email</h4>
-                  <p className="text-muted-foreground">alirez@my.yorku.ca (primary)</p>
-                  <p className="text-muted-foreground">ali0rezaei0@gmail.com</p>
+                  <p className="text-muted-foreground">manjrekadi05@gmail.com</p>
                 </div>
               </div>
 
@@ -216,7 +215,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-medium mb-1">Phone</h4>
-                  <p className="text-muted-foreground">+1 (437) 238-9820</p>
+                  <p className="text-muted-foreground">+1 (647) 868-1927</p>
                 </div>
               </div>
 
@@ -227,10 +226,10 @@ const ContactSection = () => {
                 <div>
                   <h4 className="font-medium mb-1">Location</h4>
                   <p className="text-muted-foreground">
-                    York University - Centre for Vision Research
+                    York University
                   </p>
                   <p className="text-muted-foreground">
-                    4700 Keele St, North York, ON M3J 1P3
+                    Toronto, ON
                   </p>
                 </div>
               </div>
@@ -242,12 +241,12 @@ const ContactSection = () => {
                 <div>
                   <h4 className="font-medium mb-1">LinkedIn</h4>
                   <a
-                    href="https://linkedin.com/in/ali-r-652a7970"
+                    href="https://www.linkedin.com/in/m-adi05/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary hover:text-primary/80 transition-colors"
                   >
-                    linkedin.com/in/ali-r-652a7970
+                    linkedin.com/in/m-adi05
                   </a>
                 </div>
               </div>
@@ -259,12 +258,12 @@ const ContactSection = () => {
                 <div>
                   <h4 className="font-medium mb-1">GitHub</h4>
                   <a
-                    href="https://github.com/AliRezaei-Code"
+                    href="https://github.com/manjrekAdi"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary hover:text-primary/80 transition-colors"
                   >
-                    github.com/AliRezaei-Code
+                    github.com/manjrekAdi
                   </a>
                 </div>
               </div>

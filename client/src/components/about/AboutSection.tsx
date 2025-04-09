@@ -33,7 +33,7 @@ const AboutSection = () => {
       <div className="container mx-auto px-4 md:px-6">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">About Me</h2>
         <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-16">
-          Computer Science and Neuropsychology student with a passion for AI, machine learning, and XR technologies.
+          Computer Science student with a passion for software development, data analytics, and full-stack web applications.
         </p>
         
         <motion.div 
@@ -56,12 +56,12 @@ const AboutSection = () => {
             
             <div className="space-y-4 text-muted-foreground">
               <div>
-                <p className="font-medium text-foreground">Lassonde Engineering - York University</p>
-                <p>Computer Science and Neuropsychology Hons. BSc. (2021-2026)</p>
+                <p className="font-medium text-foreground">York University</p>
+                <p>Bachelor of Science in Computer Science (Sept 2021 - Expected Apr 2026)</p>
               </div>
               <div>
-                <p className="font-medium text-foreground">Canada School of Public Service</p>
-                <p>Project Management and Business Operations (2023-2024)</p>
+                <p className="font-medium text-foreground">Relevant Coursework</p>
+                <p>Object-Oriented Programming, Data Structures and Algorithms, Database Management Systems, Web Development</p>
               </div>
             </div>
           </motion.div>
@@ -81,11 +81,11 @@ const AboutSection = () => {
             <p className="mb-4 text-muted-foreground">I specialize in software engineering with a focus on:</p>
             <ul className="space-y-2 text-muted-foreground">
               {[
-                "Machine Learning & AI",
-                "XR/VR Technologies",
+                "Full-Stack Web Development",
+                "Java & Spring Boot Applications",
+                "React & Angular Frameworks",
                 "Data Analysis & Visualization",
-                "Full-Stack Development",
-                "Embedded Systems"
+                "Database Design & Management"
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <span className="text-primary mr-2">✓</span> {item}
@@ -106,14 +106,14 @@ const AboutSection = () => {
               <h3 className="text-xl font-semibold">Research Interests</h3>
             </div>
             
-            <p className="mb-4 text-muted-foreground">My research focuses on the intersection of:</p>
+            <p className="mb-4 text-muted-foreground">My interests focus on the intersection of:</p>
             <ul className="space-y-2 text-muted-foreground">
               {[
-                "Neuroscience & Cognitive Computing",
+                "Software Development & UX/UI Design",
                 "Human-Computer Interaction",
-                "Large Language Models",
-                "Computer Vision",
-                "Visuomotor Neuroscience"
+                "Data Science & Analytics",
+                "Web Application Architecture",
+                "Mobile Application Development"
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <span className="text-primary mr-2">✓</span> {item}

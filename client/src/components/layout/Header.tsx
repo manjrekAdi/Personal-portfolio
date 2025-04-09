@@ -66,7 +66,7 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center py-4">
         <Link href="/" className="text-xl font-semibold text-foreground hover:text-primary transition-colors">
-          Ali Rezaei
+          Aditya Manjrekar
         </Link>
 
         {/* Desktop Menu */}

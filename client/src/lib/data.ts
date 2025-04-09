@@ -41,50 +41,34 @@ export interface ExperienceItem {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "XR Data Collection System",
-    description: "Developed a system for real-time data stream collection using VR/XR technologies integrated with embedded systems for experimental research.",
-    technologies: ["Python", "C#", "Unity", "XR/VR", "Data Analysis"],
-    categories: ["aiml", "hardware", "research"],
+    title: "Online Banking System",
+    description: "Built a secure and responsive banking platform with features like account management, transactions, and loan services.",
+    technologies: ["Java", "Spring Boot", "Angular", "HTML", "CSS", "JavaScript", "MySQL"],
+    categories: ["webdev", "fullstack"],
     projectUrl: "#"
   },
   {
     id: 2,
-    title: "LLM Fine-tuning Framework",
-    description: "Fine-tuned various ML models using Hugging Face, TensorFlow, and PyTorch, focusing on LLaMA 2, Mixtral, and LLAVA models.",
-    technologies: ["Python", "PyTorch", "TensorFlow", "Hugging Face", "LangChain"],
-    categories: ["aiml"],
+    title: "Othello Game Application",
+    description: "Designed and developed a feature-rich Othello board game with a JavaFX-based GUI, integrating multiple AI strategies and robust game management features.",
+    technologies: ["Java", "JavaFX", "Design Patterns", "OOP"],
+    categories: ["gamedev", "aiml"],
     projectUrl: "#"
   },
   {
     id: 3,
-    title: "Neuroscience Data Analysis Platform",
-    description: "Platform for processing and analyzing complex datasets from neuroscientific studies using advanced statistical and computational methods.",
-    technologies: ["Python", "R", "MATLAB", "Data Analysis", "Visualization"],
-    categories: ["research", "aiml"],
+    title: "Coding Practice Platform",
+    description: "Developing an interactive web application to enhance coding skills, similar to neetcode.io, with features for learning and problem solving.",
+    technologies: ["React.js", "TypeScript", "MySQL", "HTML", "CSS", "JavaScript"],
+    categories: ["webdev", "fullstack"],
     projectUrl: "#"
   },
   {
     id: 4,
     title: "Portfolio Website",
-    description: "Modern, responsive portfolio website built with Next.js, Tailwind CSS, and shadcn/ui components.",
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    description: "Modern, responsive portfolio website built with React, Tailwind CSS, and shadcn/ui components.",
+    technologies: ["React", "TypeScript", "Tailwind CSS"],
     categories: ["webdev"],
-    projectUrl: "#"
-  },
-  {
-    id: 5,
-    title: "Embedded System for Sensor Integration",
-    description: "Utilized sensor technologies and embedded systems for real-time data collection and analysis.",
-    technologies: ["C", "C++", "Embedded Systems", "Hardware"],
-    categories: ["hardware"],
-    projectUrl: "#"
-  },
-  {
-    id: 6,
-    title: "Machine Learning Visualization Tool",
-    description: "Interactive tool for visualizing machine learning models and data, helping researchers understand complex patterns.",
-    technologies: ["Python", "JavaScript", "D3.js", "Machine Learning"],
-    categories: ["aiml", "webdev"],
     projectUrl: "#"
   }
 ];
@@ -93,98 +77,99 @@ export const projects: Project[] = [
 export const liveProjects: LiveProject[] = [
   {
     id: 1,
-    title: "Neural Network Visualizer",
-    description: "An interactive tool that visualizes the inner workings of neural networks in real-time, helping researchers and students understand how neural networks process information.",
-    technologies: ["TensorFlow.js", "React", "Three.js"],
+    title: "Online Banking System",
+    description: "A secure and responsive banking platform with features like account management, transactions, and loan services using Angular frontend and Spring Boot backend.",
+    technologies: ["Java", "Spring Boot", "Angular", "MySQL"],
     demoUrl: "#",
-    repoUrl: "#"
+    repoUrl: "https://github.com/manjrekAdi"
   },
   {
     id: 2,
-    title: "XR Learning Environment",
-    description: "A virtual reality environment designed for educational purposes, allowing students to explore and interact with complex scientific concepts in an immersive 3D space.",
-    technologies: ["Unity", "C#", "WebXR"],
+    title: "Othello Game Application",
+    description: "A feature-rich Othello board game with a JavaFX-based GUI, integrating multiple AI strategies including Random and Greedy algorithms.",
+    technologies: ["Java", "JavaFX", "Design Patterns"],
     demoUrl: "#",
-    repoUrl: "#"
+    repoUrl: "https://github.com/manjrekAdi"
   },
   {
     id: 3,
-    title: "NeuroTech Dashboard",
-    description: "A comprehensive dashboard for neuroscience researchers to monitor, analyze, and visualize brain activity data in real-time with advanced filtering and annotation capabilities.",
-    technologies: ["Python", "Django", "D3.js", "WebSockets"],
+    title: "Coding Practice Platform",
+    description: "An interactive web application to enhance coding skills, similar to neetcode.io, with structured learning paths and problem-solving exercises.",
+    technologies: ["React", "TypeScript", "MySQL"],
     demoUrl: "#",
-    repoUrl: "#"
+    repoUrl: "https://github.com/manjrekAdi"
   }
 ];
 
 // Skills Data
 export const programmingSkills: Skill[] = [
-  { name: "Python", percentage: 95 },
-  { name: "C/C++", percentage: 85 },
-  { name: "JavaScript/TypeScript", percentage: 90 },
-  { name: "R", percentage: 80 },
-  { name: "MATLAB", percentage: 85 },
-  { name: "C#", percentage: 80 },
-  { name: "Java", percentage: 75 }
+  { name: "Java", percentage: 90 },
+  { name: "Python", percentage: 85 },
+  { name: "C/C++", percentage: 80 },
+  { name: "JavaScript/TypeScript", percentage: 85 },
+  { name: "SQL (MySQL)", percentage: 80 },
+  { name: "Shell Scripting", percentage: 75 }
 ];
 
 export const aiMlSkills: Skill[] = [
-  { name: "TensorFlow", percentage: 90 },
-  { name: "PyTorch", percentage: 85 },
-  { name: "Scikit-learn", percentage: 95 },
-  { name: "Hugging Face", percentage: 85 },
-  { name: "OpenCV", percentage: 80 },
-  { name: "LangChain", percentage: 75 }
+  { name: "Data Analysis", percentage: 85 },
+  { name: "Pandas", percentage: 80 },
+  { name: "NumPy", percentage: 80 },
+  { name: "Matplotlib", percentage: 75 },
+  { name: "Seaborn", percentage: 75 },
+  { name: "Tableau", percentage: 70 }
 ];
 
 export const webDevSkills: Skill[] = [
-  { name: "React", percentage: 90 },
-  { name: "Next.js", percentage: 85 },
-  { name: "Tailwind CSS", percentage: 95 },
-  { name: "Django", percentage: 80 },
-  { name: "Node.js", percentage: 85 },
-  { name: "Express.js", percentage: 80 }
+  { name: "React.js", percentage: 85 },
+  { name: "Angular", percentage: 80 },
+  { name: "Spring Boot", percentage: 85 },
+  { name: "REST API", percentage: 80 },
+  { name: "HTML/CSS", percentage: 90 },
+  { name: "Tailwind CSS", percentage: 85 }
 ];
 
 export const otherTechSkills: Skill[] = [
-  { name: "Unity", percentage: 85 },
-  { name: "Git & GitHub", percentage: 95 },
-  { name: "Docker", percentage: 80 },
-  { name: "Kubernetes", percentage: 70 },
-  { name: "AWS", percentage: 75 },
-  { name: "Arduino/Raspberry Pi", percentage: 85 }
+  { name: "Git & GitHub", percentage: 90 },
+  { name: "JUnit", percentage: 80 },
+  { name: "VS Code", percentage: 90 },
+  { name: "IntelliJ", percentage: 85 },
+  { name: "Figma", percentage: 75 },
+  { name: "Excel", percentage: 80 }
 ];
 
 // Experience Data
 export const experienceItems: ExperienceItem[] = [
   {
-    title: "Software Engineer",
-    company: "Defence Research and Development Canada",
-    period: "May 2023 - Aug 2024",
+    title: "Software Developer (Freelance)",
+    company: "Checklick",
+    period: "Apr 2025 - Present",
     responsibilities: [
-      "Developed software solutions for defense research applications.",
-      "Implemented machine learning algorithms for data analysis and pattern recognition.",
-      "Collaborated with cross-functional teams on research projects."
+      "Implemented responsive web pages using React.js and Tailwind CSS based on designs from Zeplin.",
+      "Collaborated with designers to ensure UI accuracy and cross-browser compatibility.",
+      "Maintained clean code and version control using Git and GitHub."
     ]
   },
   {
-    title: "Research Assistant",
-    company: "York University Centre for Vision Research - Visuomotor Neuroscience Lab",
-    period: "September 2024 - Present",
+    title: "Data Analytics Intern",
+    company: "Ededge Groups",
+    period: "Jan 2025 - Apr 2025",
     responsibilities: [
-      "Conducting research on visuomotor neuroscience applications.",
-      "Developing data analysis tools for neuroscientific studies.",
-      "Publishing research findings in academic journals and conferences."
+      "Collaborated with a data science team to analyze, preprocess, and visualize large datasets.",
+      "Applied Python for Exploratory Data Analysis (EDA) to address real-world challenges in business contexts such as risk analytics.",
+      "Utilized tools like Tableau to create data visualizations and reports that effectively communicate findings.",
+      "Built machine learning pipelines, applied statistical methods, and optimized model performance in multidisciplinary projects."
     ]
   },
   {
-    title: "Volunteer",
-    company: "Various Organizations",
-    period: "2021 - Present",
+    title: "Software Developer (Freelance)",
+    company: "Draw Dream",
+    period: "Feb 2025 - Apr 2025",
     responsibilities: [
-      "Lumiate - Contributed to educational initiatives and workshops focused on technology and innovation.",
-      "NeuroCollege - Assisted in organizing neuroscience-related events and educational programs.",
-      "UNICEF at YorkU - Participated in humanitarian initiatives and awareness campaigns."
+      "Developing an interactive web application to enhance coding skills, similar to neetcode.io, using React.js, TypeScript, HTML, CSS, and JavaScript.",
+      "Implementing MySQL for backend data management, including user authentication and progress tracking.",
+      "Collaborating with a team to integrate front-end and back-end components, focusing on scalability and performance.",
+      "Following best practices in UI/UX design to enhance user engagement through structured learning paths and interactive problem-solving."
     ]
   }
 ];

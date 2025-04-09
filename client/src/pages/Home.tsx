@@ -12,12 +12,12 @@ import ContactSection from "@/components/contact/ContactSection";
 
 const Home = () => {
   useEffect(() => {
-    document.title = "Ali Rezaei - Software Engineer & Researcher";
+    document.title = "Aditya Manjrekar - Software Developer";
     
     // Set meta tags for better SEO
     const metaDescription = document.createElement('meta');
     metaDescription.name = 'description';
-    metaDescription.content = 'Ali Rezaei is a software engineer and researcher specializing in AI, machine learning, and XR technologies.';
+    metaDescription.content = 'Aditya Manjrekar is a computer science student and software developer specializing in full-stack development, Java, and React applications.';
     document.head.appendChild(metaDescription);
     
     return () => {

@@ -12,7 +12,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Ali Rezaei
+          Aditya Manjrekar
         </motion.h1>
         
         <motion.h2 
@@ -21,7 +21,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Software Engineer & Researcher
+          Software Developer
         </motion.h2>
         
         <motion.p 
@@ -30,7 +30,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Specializing in AI, machine learning, and XR technologies with a background in software engineering and research.
+          Computer Science student specializing in full-stack development with experience in Java, React, Angular, and data analytics.
         </motion.p>
         
         <motion.div 
@@ -54,7 +54,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <a 
-            href="https://github.com/AliRezaei-Code" 
+            href="https://github.com/manjrekAdi" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="hover:text-primary transition-colors"
@@ -63,7 +63,7 @@ const HeroSection = () => {
             <Github size={24} />
           </a>
           <a 
-            href="https://linkedin.com/in/ali-r-652a7970" 
+            href="https://www.linkedin.com/in/m-adi05/" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="hover:text-primary transition-colors"
@@ -72,7 +72,7 @@ const HeroSection = () => {
             <Linkedin size={24} />
           </a>
           <a 
-            href="mailto:alirez@my.yorku.ca" 
+            href="mailto:manjrekadi05@gmail.com" 
             className="hover:text-primary transition-colors"
             aria-label="Email"
           >
