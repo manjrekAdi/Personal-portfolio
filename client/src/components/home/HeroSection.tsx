@@ -15,14 +15,14 @@ const HeroSection = () => {
         <div className="text-center">
           <ScrollAnimationWrapper animation="zoom">
             <motion.h1 
-              className="text-5xl md:text-7xl font-bold mb-4 text-white"
+              className="text-5xl md:text-7xl font-bold mb-4 text-foreground"
             >
               Aditya Manjrekar
             </motion.h1>
           </ScrollAnimationWrapper>
 
           <ScrollAnimationWrapper animation="fade" delay={0.2}>
-            <div className="text-3xl md:text-4xl font-semibold mb-6 text-primary/90">
+            <div className="text-3xl md:text-4xl font-semibold mb-6 text-primary">
               <Typewriter
                 onInit={(typewriter) => {
                   typewriter
@@ -34,14 +34,14 @@ const HeroSection = () => {
                   delay: 50,
                   loop: false,
                   autoStart: false,
-                  wrapperClassName: "text-primary/90"
+                  wrapperClassName: "text-primary"
                 }}
               />
             </div>
           </ScrollAnimationWrapper>
 
           <ScrollAnimationWrapper animation="fade" delay={0.3}>
-            <motion.p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 mt-6">
+            <motion.p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto mb-8 mt-6">
               Computer Science student specializing in full-stack development with experience in
               Java, React, Angular, and data analytics.
             </motion.p>
@@ -68,7 +68,7 @@ const HeroSection = () => {
                 href="https://github.com/manjrekAdi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-foreground/80 hover:text-primary transition-colors"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -78,7 +78,7 @@ const HeroSection = () => {
                 href="https://linkedin.com/in/m-adi05"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-foreground/80 hover:text-primary transition-colors"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -86,7 +86,7 @@ const HeroSection = () => {
               </motion.a>
               <motion.a
                 href="mailto:manjrekadi05@gmail.com"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-foreground/80 hover:text-primary transition-colors"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >

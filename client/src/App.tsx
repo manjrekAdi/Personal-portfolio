@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import { useEffect } from "react";
+import { ThemeProvider } from "@/providers/ThemeProvider";
 
 function App() {
   // Smooth scroll to anchors
@@ -28,13 +29,13 @@ function App() {
   }, []);
 
   return (
-    <>
+    <ThemeProvider defaultTheme="dark" storageKey="portfolio-theme">
       <Switch>
         <Route path="/" component={Home} />
         <Route component={NotFound} />
       </Switch>
       <Toaster />
-    </>
+    </ThemeProvider>
   );
 }
 

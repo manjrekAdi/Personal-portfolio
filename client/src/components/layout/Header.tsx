@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { Moon, Menu, X } from "lucide-react";
+import { Moon, Sun, Menu, X } from "lucide-react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "@/providers/ThemeProvider";
 
 interface NavItem {
   label: string;
@@ -22,6 +23,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -96,15 +98,38 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Dark Mode Toggle */}
+        {/* Theme Toggle */}
         <motion.button
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="p-2 rounded-full bg-secondary text-primary hover:bg-primary hover:text-white transition-all"
-          aria-label="Toggle dark mode"
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          className="p-2 rounded-full bg-secondary hover:bg-primary hover:text-secondary-foreground transition-all"
+          aria-label="Toggle theme"
         >
-          <Moon size={18} />
+          <AnimatePresence mode="wait" initial={false}>
+            {theme === "dark" ? (
+              <motion.div
+                key="dark"
+                initial={{ rotate: -180, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: 180, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Moon size={18} />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="light"
+                initial={{ rotate: 180, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: -180, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Sun size={18} />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.button>
 
         {/* Mobile Menu Button */}
