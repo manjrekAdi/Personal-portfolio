@@ -18,6 +18,7 @@ export default defineConfig({
         ]
       : []),
   ],
+  base: process.env.VITE_BASE_PATH || "/Personal-portfolio",
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),

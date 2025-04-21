@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { z } from "zod";
+import { sendContactFormEmail } from "./services/email";
 
 // Contact form validation schema
 const contactFormSchema = z.object({
@@ -21,6 +22,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Store the contact message
       const contact = await storage.createContactMessage(validatedData);
       
+      // Send email notification
+      await sendContactFormEmail(validatedData);
+      
       res.status(200).json({ 
         success: true, 
         message: "Your message has been sent successfully!" 
@@ -33,7 +37,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           errors: error.errors 
         });
       } else {
-        console.error("Error sending contact message:", error);
+        console.error("Error processing contact message:", error);
         res.status(500).json({ 
           success: false, 
           message: "Failed to send message. Please try again later." 
