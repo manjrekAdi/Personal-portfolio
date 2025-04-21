@@ -4,7 +4,10 @@ export interface Project {
   title: string;
   description: string;
   technologies: string[];
-  categories: string[];
+  categories: ("all" | "fullstack" | "aiml" | "research" | "systems")[];
+  image?: string;
+  github?: string;
+  demo?: string;
 }
 
 export interface LiveProject {
@@ -41,30 +44,35 @@ export const projects: Project[] = [
   {
     id: 1,
     title: "Online Banking System",
-    description: "Built a secure and responsive banking platform with features like account management, transactions, and loan services.",
-    technologies: ["Java", "Spring Boot", "Angular", "HTML", "CSS", "JavaScript", "MySQL"],
-    categories: ["webdev", "fullstack"]
+    description: "A secure and user-friendly online banking platform with features like account management, transactions, and bill payments.",
+    technologies: ["React", "Node.js", "Express", "MongoDB", "TypeScript"],
+    categories: ["all", "fullstack"],
+    github: "https://github.com/yourusername/banking-system",
   },
   {
     id: 2,
     title: "Othello Game Application",
-    description: "Designed and developed a feature-rich Othello board game with a JavaFX-based GUI, integrating multiple AI strategies and robust game management features.",
-    technologies: ["Java", "JavaFX", "Design Patterns", "OOP"],
-    categories: ["gamedev", "aiml"]
+    description: "An interactive Othello/Reversi game with AI opponent using minimax algorithm and alpha-beta pruning.",
+    technologies: ["Python", "PyGame", "AI Algorithms"],
+    categories: ["all", "aiml", "systems"],
+    github: "https://github.com/yourusername/othello-game",
   },
   {
     id: 3,
     title: "Coding Practice Platform",
-    description: "Developing an interactive web application to enhance coding skills, similar to neetcode.io, with features for learning and problem solving.",
-    technologies: ["React.js", "TypeScript", "MySQL", "HTML", "CSS", "JavaScript"],
-    categories: ["webdev", "fullstack"]
+    description: "A platform for practicing coding problems with automated testing and real-time feedback.",
+    technologies: ["React", "Node.js", "PostgreSQL", "Docker"],
+    categories: ["all", "fullstack", "systems"],
+    github: "https://github.com/yourusername/coding-platform",
   },
   {
     id: 4,
-    title: "Portfolio Website",
-    description: "Modern, responsive portfolio website built with React, Tailwind CSS, and shadcn/ui components.",
-    technologies: ["React", "TypeScript", "Tailwind CSS"],
-    categories: ["webdev"]
+    title: "Personal Portfolio Website",
+    description: "A modern, responsive portfolio website built with React and Next.js, featuring smooth animations, dark mode, and a clean UI. Includes sections for projects, skills, and a contact form.",
+    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Shadcn UI"],
+    categories: ["all", "fullstack"],
+    github: "https://github.com/yourusername/personal-portfolio",
+    demo: "https://your-portfolio-url.com"
   }
 ];
 

@@ -6,17 +6,17 @@ import { projects } from "@/lib/data";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import ScrollAnimationWrapper from "@/components/ui/ScrollAnimationWrapper";
 
-type ProjectCategory = "all" | "aiml" | "research" | "webdev" | "hardware";
+type ProjectCategory = "all" | "fullstack" | "aiml" | "research" | "systems";
 
 const ProjectsSection = () => {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>("all");
 
   const categories: { value: ProjectCategory; label: string }[] = [
     { value: "all", label: "All Projects" },
+    { value: "fullstack", label: "Full Stack" },
     { value: "aiml", label: "AI & ML" },
     { value: "research", label: "Research" },
-    { value: "webdev", label: "Web Development" },
-    { value: "hardware", label: "Hardware & Embedded" },
+    { value: "systems", label: "Systems & Tools" },
   ];
 
   const filteredProjects = projects.filter((project) => {
