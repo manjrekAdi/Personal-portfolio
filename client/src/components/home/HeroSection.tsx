@@ -26,7 +26,7 @@ const HeroSection = () => {
               <Typewriter
                 onInit={(typewriter) => {
                   typewriter
-                    .typeString("Data Scientist and Full Stack Developer")
+                    .typeString("Data Scientist & Full Stack Developer")
                     .start();
                 }}
                 options={{

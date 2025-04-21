@@ -98,11 +98,11 @@ const AboutSection = () => {
                 <p className="mb-4 text-muted-foreground">My interests focus on the intersection of:</p>
                 <ul className="space-y-2 text-muted-foreground">
                   {[
-                    "Software Development & UX/UI Design",
-                    "Human-Computer Interaction",
-                    "Data Science & Analytics",
-                    "Web Application Architecture",
-                    "Mobile Application Development"
+                    "Data Science & Machine Learning",
+                    "Artificial Intelligence & Deep Learning",
+                    "Full Stack Development & Cloud Computing",
+                    "Quantum Computing & Quantum ML",
+                    "Large Language Models & AI Applications"
                   ].map((item, index) => (
                     <motion.li 
                       key={index} 
