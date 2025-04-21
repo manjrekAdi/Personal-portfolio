@@ -5,7 +5,6 @@ export interface Project {
   description: string;
   technologies: string[];
   categories: string[];
-  projectUrl: string;
 }
 
 export interface LiveProject {
@@ -44,32 +43,28 @@ export const projects: Project[] = [
     title: "Online Banking System",
     description: "Built a secure and responsive banking platform with features like account management, transactions, and loan services.",
     technologies: ["Java", "Spring Boot", "Angular", "HTML", "CSS", "JavaScript", "MySQL"],
-    categories: ["webdev", "fullstack"],
-    projectUrl: "#"
+    categories: ["webdev", "fullstack"]
   },
   {
     id: 2,
     title: "Othello Game Application",
     description: "Designed and developed a feature-rich Othello board game with a JavaFX-based GUI, integrating multiple AI strategies and robust game management features.",
     technologies: ["Java", "JavaFX", "Design Patterns", "OOP"],
-    categories: ["gamedev", "aiml"],
-    projectUrl: "#"
+    categories: ["gamedev", "aiml"]
   },
   {
     id: 3,
     title: "Coding Practice Platform",
     description: "Developing an interactive web application to enhance coding skills, similar to neetcode.io, with features for learning and problem solving.",
     technologies: ["React.js", "TypeScript", "MySQL", "HTML", "CSS", "JavaScript"],
-    categories: ["webdev", "fullstack"],
-    projectUrl: "#"
+    categories: ["webdev", "fullstack"]
   },
   {
     id: 4,
     title: "Portfolio Website",
     description: "Modern, responsive portfolio website built with React, Tailwind CSS, and shadcn/ui components.",
     technologies: ["React", "TypeScript", "Tailwind CSS"],
-    categories: ["webdev"],
-    projectUrl: "#"
+    categories: ["webdev"]
   }
 ];
 

@@ -30,23 +30,23 @@ const Home = () => {
       <Header />
       <main className="flex-grow">
         <AnimateOnScroll>
-          <HeroSection />
+        <HeroSection />
         </AnimateOnScroll>
         
         <AnimateOnScroll delay={0.2}>
-          <AboutSection />
+        <AboutSection />
         </AnimateOnScroll>
         
         <AnimateOnScroll delay={0.3}>
-          <ProjectsSection />
+        <ProjectsSection />
         </AnimateOnScroll>
         
         <AnimateOnScroll delay={0.3}>
-          <SkillsSection />
+        <SkillsSection />
         </AnimateOnScroll>
         
         <AnimateOnScroll delay={0.4}>
-          <ExperienceSection />
+        <ExperienceSection />
         </AnimateOnScroll>
         
         <AnimateOnScroll delay={0.5}>
@@ -54,7 +54,7 @@ const Home = () => {
         </AnimateOnScroll>
         
         <AnimateOnScroll delay={0.6}>
-          <ContactSection />
+        <ContactSection />
         </AnimateOnScroll>
       </main>
       <Footer />

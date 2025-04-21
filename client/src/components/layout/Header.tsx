@@ -73,9 +73,9 @@ const Header = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <Link href="/" className="text-xl font-semibold text-foreground hover:text-primary transition-colors">
-            Aditya Manjrekar
-          </Link>
+        <Link href="/" className="text-xl font-semibold text-foreground hover:text-primary transition-colors">
+          Aditya Manjrekar
+        </Link>
         </motion.div>
 
         {/* Desktop Menu */}
@@ -130,22 +130,22 @@ const Header = () => {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
             className="md:hidden bg-secondary border-t border-border py-2"
-          >
-            <div className="container mx-auto px-4 flex flex-col space-y-3">
+      >
+        <div className="container mx-auto px-4 flex flex-col space-y-3">
               {navItems.map((item, index) => (
                 <motion.a
-                  key={item.href}
+              key={item.href}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  href={item.href}
-                  className="px-4 py-2 hover:bg-muted rounded-md transition-colors"
-                  onClick={closeMobileMenu}
-                >
-                  {item.label}
+              href={item.href}
+              className="px-4 py-2 hover:bg-muted rounded-md transition-colors"
+              onClick={closeMobileMenu}
+            >
+              {item.label}
                 </motion.a>
-              ))}
-            </div>
+          ))}
+        </div>
           </motion.div>
         )}
       </AnimatePresence>
