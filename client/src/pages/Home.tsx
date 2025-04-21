@@ -4,11 +4,11 @@ import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/home/HeroSection";
 import AboutSection from "@/components/about/AboutSection";
 import ProjectsSection from "@/components/projects/ProjectsSection";
-import LiveProjectsSection from "@/components/projects/LiveProjectsSection";
 import SkillsSection from "@/components/skills/SkillsSection";
 import ExperienceSection from "@/components/experience/ExperienceSection";
-import BooksSection from "@/components/books/BooksSection";
+import ResumeSection from "@/components/resume/ResumeSection";
 import ContactSection from "@/components/contact/ContactSection";
+import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
 const Home = () => {
   useEffect(() => {
@@ -29,14 +29,33 @@ const Home = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow">
-        <HeroSection />
-        <AboutSection />
-        <ProjectsSection />
-        <LiveProjectsSection />
-        <SkillsSection />
-        <ExperienceSection />
-        <BooksSection />
-        <ContactSection />
+        <AnimateOnScroll>
+          <HeroSection />
+        </AnimateOnScroll>
+        
+        <AnimateOnScroll delay={0.2}>
+          <AboutSection />
+        </AnimateOnScroll>
+        
+        <AnimateOnScroll delay={0.3}>
+          <ProjectsSection />
+        </AnimateOnScroll>
+        
+        <AnimateOnScroll delay={0.3}>
+          <SkillsSection />
+        </AnimateOnScroll>
+        
+        <AnimateOnScroll delay={0.4}>
+          <ExperienceSection />
+        </AnimateOnScroll>
+        
+        <AnimateOnScroll delay={0.5}>
+          <ResumeSection />
+        </AnimateOnScroll>
+        
+        <AnimateOnScroll delay={0.6}>
+          <ContactSection />
+        </AnimateOnScroll>
       </main>
       <Footer />
     </div>

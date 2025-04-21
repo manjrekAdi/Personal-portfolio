@@ -151,6 +151,17 @@ export const experienceItems: ExperienceItem[] = [
     ]
   },
   {
+    title: "Software Developer (Freelance)",
+    company: "Draw Dream",
+    period: "Feb 2025 - Apr 2025",
+    responsibilities: [
+      "Developing an interactive web application to enhance coding skills, similar to neetcode.io, using React.js, TypeScript, HTML, CSS, and JavaScript.",
+      "Implementing MySQL for backend data management, including user authentication and progress tracking.",
+      "Collaborating with a team to integrate front-end and back-end components, focusing on scalability and performance.",
+      "Following best practices in UI/UX design to enhance user engagement through structured learning paths and interactive problem-solving."
+    ]
+  },
+  {
     title: "Data Analytics Intern",
     company: "Ededge Groups",
     period: "Jan 2025 - Apr 2025",
@@ -162,14 +173,13 @@ export const experienceItems: ExperienceItem[] = [
     ]
   },
   {
-    title: "Software Developer (Freelance)",
-    company: "Draw Dream",
-    period: "Feb 2025 - Apr 2025",
+    title: "Content Researcher (Remote)",
+    company: "Canada's Virtual Assistant",
+    period: "Sept 2024 - Oct 2024",
     responsibilities: [
-      "Developing an interactive web application to enhance coding skills, similar to neetcode.io, using React.js, TypeScript, HTML, CSS, and JavaScript.",
-      "Implementing MySQL for backend data management, including user authentication and progress tracking.",
-      "Collaborating with a team to integrate front-end and back-end components, focusing on scalability and performance.",
-      "Following best practices in UI/UX design to enhance user engagement through structured learning paths and interactive problem-solving."
+      "Conducted in-depth market research and analyzed industry trends to create engaging and informative blog content.",
+      "Optimized content strategy through SEO-driven writing, improving engagement and visibility.",
+      "Collaborated with the team to develop data-driven content strategies aligned with branding and marketing goals."
     ]
   }
 ];
