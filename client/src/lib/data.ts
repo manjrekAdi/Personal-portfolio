@@ -44,35 +44,34 @@ export const projects: Project[] = [
   {
     id: 1,
     title: "Online Banking System",
-    description: "A secure and user-friendly online banking platform with features like account management, transactions, and bill payments.",
-    technologies: ["React", "Node.js", "Express", "MongoDB", "TypeScript"],
+    description: "Built a secure and responsive online banking platform with features such as account management, transactions, and loan services. Led front-end development using Angular and developed a robust backend with Spring Boot and MySQL, ensuring reliable and secure API interactions. Implemented modules for customer operations, secure login, and seamless data handling across all application components.",
+    technologies: ["Java", "Spring Boot", "Angular", "MySQL", "HTML", "CSS", "JavaScript"],
     categories: ["all", "fullstack"],
-    github: "https://github.com/yourusername/banking-system",
+    github: "https://github.com/manjrekAdi",
   },
   {
     id: 2,
-    title: "Othello Game Application",
-    description: "An interactive Othello/Reversi game with AI opponent using minimax algorithm and alpha-beta pruning.",
-    technologies: ["Python", "PyGame", "AI Algorithms"],
-    categories: ["all", "aiml", "systems"],
-    github: "https://github.com/yourusername/othello-game",
+    title: "Social Media Sentiment Analysis Dashboard",
+    description: "Developed a real-time sentiment analysis system that scrapes Reddit posts and analyzes public opinion using multiple NLP models (VADER, TextBlob, BERT) with emotion classification capabilities. Built a comprehensive web dashboard with interactive visualizations including sentiment distribution charts, word clouds, and cross-model comparisons. Implemented RESTful API endpoints with Flask backend, SQLite database with session tracking, and responsive frontend with 6+ chart types for real-time data visualization and analysis.",
+    technologies: ["Python", "Flask", "React.js", "SQLite", "NLTK", "TextBlob", "BERT", "Material-UI", "Chart.js"],
+    categories: ["all", "aiml", "fullstack", "research"],
+    github: "https://github.com/manjrekAdi",
   },
   {
     id: 3,
-    title: "Coding Practice Platform",
-    description: "A platform for practicing coding problems with automated testing and real-time feedback.",
-    technologies: ["React", "Node.js", "PostgreSQL", "Docker"],
-    categories: ["all", "fullstack", "systems"],
-    github: "https://github.com/yourusername/coding-platform",
+    title: "Othello Game Application",
+    description: "A feature-rich Othello board game with a JavaFX-based GUI, integrating multiple AI strategies including Random and Greedy algorithms.",
+    technologies: ["Java", "JavaFX", "Design Patterns"],
+    categories: ["all", "aiml", "systems"],
+    github: "https://github.com/manjrekAdi",
   },
   {
     id: 4,
-    title: "Personal Portfolio Website",
-    description: "A modern, responsive portfolio website built with React and Next.js, featuring smooth animations, dark mode, and a clean UI. Includes sections for projects, skills, and a contact form.",
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Shadcn UI"],
-    categories: ["all", "fullstack"],
-    github: "https://github.com/yourusername/personal-portfolio",
-    demo: "https://your-portfolio-url.com"
+    title: "Coding Practice Platform",
+    description: "An interactive web application to enhance coding skills, similar to neetcode.io, with structured learning paths and problem-solving exercises.",
+    technologies: ["React", "TypeScript", "MySQL"],
+    categories: ["all", "fullstack", "systems"],
+    github: "https://github.com/manjrekAdi",
   }
 ];
 
@@ -88,6 +87,14 @@ export const liveProjects: LiveProject[] = [
   },
   {
     id: 2,
+    title: "Social Media Sentiment Analysis Dashboard",
+    description: "Real-time sentiment analysis system with multiple NLP models (VADER, TextBlob, BERT) and comprehensive web dashboard with interactive visualizations.",
+    technologies: ["Python", "Flask", "React.js", "SQLite", "NLTK", "TextBlob", "BERT"],
+    demoUrl: "#",
+    repoUrl: "https://github.com/manjrekAdi"
+  },
+  {
+    id: 3,
     title: "Othello Game Application",
     description: "A feature-rich Othello board game with a JavaFX-based GUI, integrating multiple AI strategies including Random and Greedy algorithms.",
     technologies: ["Java", "JavaFX", "Design Patterns"],
@@ -95,7 +102,7 @@ export const liveProjects: LiveProject[] = [
     repoUrl: "https://github.com/manjrekAdi"
   },
   {
-    id: 3,
+    id: 4,
     title: "Coding Practice Platform",
     description: "An interactive web application to enhance coding skills, similar to neetcode.io, with structured learning paths and problem-solving exercises.",
     technologies: ["React", "TypeScript", "MySQL"],
@@ -110,8 +117,9 @@ export const programmingSkills: Skill[] = [
   { name: "Python", percentage: 85 },
   { name: "C/C++", percentage: 80 },
   { name: "JavaScript/TypeScript", percentage: 85 },
-  { name: "SQL (MySQL)", percentage: 80 },
-  { name: "Shell Scripting", percentage: 75 }
+  { name: "SQL (MySQL, SQLite)", percentage: 80 },
+  { name: "Shell Scripting", percentage: 75 },
+  { name: "Linux/Unix", percentage: 75 }
 ];
 
 export const aiMlSkills: Skill[] = [
@@ -120,6 +128,9 @@ export const aiMlSkills: Skill[] = [
   { name: "NumPy", percentage: 80 },
   { name: "Matplotlib", percentage: 75 },
   { name: "Seaborn", percentage: 75 },
+  { name: "NLTK", percentage: 75 },
+  { name: "TextBlob", percentage: 75 },
+  { name: "BERT / HuggingFace", percentage: 70 },
   { name: "Tableau", percentage: 70 }
 ];
 
@@ -127,9 +138,13 @@ export const webDevSkills: Skill[] = [
   { name: "React.js", percentage: 85 },
   { name: "Angular", percentage: 80 },
   { name: "Spring Boot", percentage: 85 },
+  { name: "Flask", percentage: 75 },
   { name: "REST API", percentage: 80 },
   { name: "HTML/CSS", percentage: 90 },
-  { name: "Tailwind CSS", percentage: 85 }
+  { name: "Tailwind CSS", percentage: 85 },
+  { name: "Material-UI", percentage: 75 },
+  { name: "Chart.js", percentage: 75 },
+  { name: "D3.js", percentage: 70 }
 ];
 
 export const otherTechSkills: Skill[] = [
@@ -137,16 +152,32 @@ export const otherTechSkills: Skill[] = [
   { name: "JUnit", percentage: 80 },
   { name: "VS Code", percentage: 90 },
   { name: "IntelliJ", percentage: 85 },
+  { name: "PyCharm", percentage: 80 },
+  { name: "CLion", percentage: 75 },
+  { name: "WebStorm", percentage: 75 },
+  { name: "Eclipse", percentage: 75 },
   { name: "Figma", percentage: 75 },
+  { name: "Vite", percentage: 80 },
   { name: "Excel", percentage: 80 }
 ];
 
 // Experience Data
 export const experienceItems: ExperienceItem[] = [
   {
+    title: "Software Engineer Co-op (DNA Support - E-Reporting/CMOD)",
+    company: "TD Bank",
+    period: "Fall 2025 - Present",
+    responsibilities: [
+      "Executed CyberArk passphrase rotation across multiple testing environments and Production, including validating PGP file encryption/decryption and performing post-deployment checks.",
+      "Built scripts to identify all server scripts with hardcoded credentials, including those triggered by Autosys jobs, and supported their remediation.",
+      "Updated affected scripts to dynamically retrieve passphrases via CyberArk checkout instead of using hardcoded values.",
+      "Resolved incidents and service tickets and performed CMOD server recycle operations to support testing and ingestion workflows."
+    ]
+  },
+  {
     title: "Software Developer (Freelance)",
     company: "Checklick",
-    period: "Apr 2025 - Present",
+    period: "Apr 2025 - Aug 2025",
     responsibilities: [
       "Implemented responsive web pages using React.js and Tailwind CSS based on designs from Zeplin.",
       "Collaborated with designers to ensure UI accuracy and cross-browser compatibility.",
@@ -158,31 +189,20 @@ export const experienceItems: ExperienceItem[] = [
     company: "Draw Dream",
     period: "Feb 2025 - Apr 2025",
     responsibilities: [
-      "Developing an interactive web application to enhance coding skills, similar to neetcode.io, using React.js, TypeScript, HTML, CSS, and JavaScript.",
-      "Implementing MySQL for backend data management, including user authentication and progress tracking.",
-      "Collaborating with a team to integrate front-end and back-end components, focusing on scalability and performance.",
-      "Following best practices in UI/UX design to enhance user engagement through structured learning paths and interactive problem-solving."
+      "Built an interactive coding platform using React.js, TypeScript, and MySQL for user progress tracking.",
+      "Integrated front-end and back-end components with a focus on performance and scalability.",
+      "Applied UI/UX best practices to create engaging learning experiences."
     ]
   },
   {
-    title: "Data Analytics Intern",
+    title: "Data Analytics Intern (Remote)",
     company: "Ededge Groups",
     period: "Jan 2025 - Apr 2025",
     responsibilities: [
-      "Collaborated with a data science team to analyze, preprocess, and visualize large datasets.",
+      "Collaborated with a data science team to analyze, preprocess, and visualize large datasets, enhancing hands-on data analytics skills.",
       "Applied Python for Exploratory Data Analysis (EDA) to address real-world challenges in business contexts such as risk analytics.",
       "Utilized tools like Tableau to create data visualizations and reports that effectively communicate findings.",
       "Built machine learning pipelines, applied statistical methods, and optimized model performance in multidisciplinary projects."
-    ]
-  },
-  {
-    title: "Content Researcher (Remote)",
-    company: "Canada's Virtual Assistant",
-    period: "Sept 2024 - Oct 2024",
-    responsibilities: [
-      "Conducted in-depth market research and analyzed industry trends to create engaging and informative blog content.",
-      "Optimized content strategy through SEO-driven writing, improving engagement and visibility.",
-      "Collaborated with the team to develop data-driven content strategies aligned with branding and marketing goals."
     ]
   }
 ];

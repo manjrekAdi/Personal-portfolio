@@ -5,10 +5,10 @@ import ScrollAnimationWrapper from "@/components/ui/ScrollAnimationWrapper";
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-20 md:py-32 bg-background relative overflow-hidden">
+    <section id="experience" className="py-20 md:py-32 bg-background/30 backdrop-blur-sm relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <ScrollAnimationWrapper animation="zoom">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Experience</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center gradient-text">Experience</h2>
           <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-16">
             My professional journey and work experience.
           </p>
@@ -26,17 +26,23 @@ const ExperienceSection = () => {
                 <div className="timeline-dot"></div>
                 <motion.div
                   className={cn(
-                    "md:w-1/2 bg-card rounded-lg p-6 border border-border shadow-md",
+                    "md:w-1/2 bg-card/60 backdrop-blur-lg rounded-3xl p-6 border border-border/40 shadow-lg card-3d",
                     index % 2 === 0
                       ? "md:ml-auto md:pl-8"
                       : "md:mr-auto md:pr-8"
                   )}
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ 
+                    scale: 1.02,
+                    rotateX: 5,
+                    rotateY: -5,
+                    z: 10
+                  }}
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                  style={{ transformStyle: "preserve-3d" }}
                 >
                   <div className="flex justify-between items-start mb-3 flex-wrap">
                     <h3 className="text-xl font-semibold">{experience.title}</h3>
-                    <span className="text-sm bg-primary/20 text-primary px-2 py-1 rounded text-xs">
+                    <span className="text-sm bg-primary/20 text-primary px-2 py-1 rounded-md text-xs">
                       {experience.period}
                     </span>
                   </div>

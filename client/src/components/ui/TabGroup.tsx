@@ -18,10 +18,10 @@ const TabGroup = ({ tabs, activeTab, onChange }: TabGroupProps) => {
         <button
           key={tab.id}
           className={cn(
-            "px-4 py-2 rounded-md transition-colors",
+            "px-4 py-2 rounded-2xl transition-all duration-300",
             activeTab === tab.id
-              ? "bg-primary/15 text-primary font-medium"
-              : "hover:bg-card"
+              ? "bg-primary/20 backdrop-blur-sm text-primary font-medium border border-primary/30 shadow-md"
+              : "bg-card/60 backdrop-blur-sm hover:bg-card/80 border border-border/50"
           )}
           onClick={() => onChange(tab.id)}
         >

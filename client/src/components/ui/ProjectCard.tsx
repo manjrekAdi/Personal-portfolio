@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Project } from "@/lib/data";
+import LazyImage from "@/components/ui/LazyImage";
 
 interface ProjectCardProps {
   project: Project;
@@ -8,10 +9,26 @@ interface ProjectCardProps {
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <motion.div
-      className="group relative bg-card rounded-lg border border-border overflow-hidden h-full flex flex-col"
-      whileHover={{ scale: 1.02 }}
+      className="group relative bg-card/60 backdrop-blur-lg rounded-3xl border border-border/40 overflow-hidden h-full flex flex-col shadow-lg card-3d"
+      whileHover={{ 
+        scale: 1.02,
+        rotateX: 5,
+        rotateY: -5,
+        z: 10
+      }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      style={{ transformStyle: "preserve-3d" }}
     >
+      {project.image && (
+        <div className="w-full h-48 overflow-hidden">
+          <LazyImage
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover"
+            skeletonClassName="rounded-t-3xl"
+          />
+        </div>
+      )}
       <div className="p-6 flex flex-col h-full">
         {/* Title */}
         <h3 className="text-xl font-semibold mb-2">{project.title}</h3>

@@ -4,10 +4,10 @@ import ScrollAnimationWrapper from "@/components/ui/ScrollAnimationWrapper";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 md:py-32 bg-background relative overflow-hidden">
+    <section id="about" className="py-20 md:py-32 bg-background/30 backdrop-blur-sm relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <ScrollAnimationWrapper animation="zoom">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">About Me</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">About Me</h2>
           <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-16">
             Computer Science student with a passion for software development, data analytics, and full-stack web applications.
           </p>
@@ -17,9 +17,15 @@ const AboutSection = () => {
           {/* Education Section */}
           <ScrollAnimationWrapper animation="fade" delay={0.2} className="h-full">
             <motion.div 
-              className="p-6 rounded-lg bg-card border border-border card-hover h-full flex flex-col"
-              whileHover={{ scale: 1.02 }}
+              className="p-6 rounded-3xl bg-card/60 backdrop-blur-lg border border-border/40 card-hover h-full flex flex-col shadow-lg card-3d"
+              whileHover={{ 
+                scale: 1.02,
+                rotateX: 5,
+                rotateY: -5,
+                z: 10
+              }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              style={{ transformStyle: "preserve-3d" }}
             >
               <div className="flex items-center mb-4">
                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-4">
@@ -44,9 +50,15 @@ const AboutSection = () => {
           {/* Technical Focus */}
           <ScrollAnimationWrapper animation="fade" delay={0.3} className="h-full">
             <motion.div 
-              className="p-6 rounded-lg bg-card border border-border card-hover h-full flex flex-col"
-              whileHover={{ scale: 1.02 }}
+              className="p-6 rounded-3xl bg-card/60 backdrop-blur-lg border border-border/40 card-hover h-full flex flex-col shadow-lg card-3d"
+              whileHover={{ 
+                scale: 1.02,
+                rotateX: 5,
+                rotateY: -5,
+                z: 10
+              }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              style={{ transformStyle: "preserve-3d" }}
             >
               <div className="flex items-center mb-4">
                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-4">
@@ -83,9 +95,15 @@ const AboutSection = () => {
           {/* Research Interests */}
           <ScrollAnimationWrapper animation="scale" delay={0.4} className="h-full">
             <motion.div 
-              className="p-6 rounded-lg bg-card border border-border card-hover h-full flex flex-col"
-              whileHover={{ scale: 1.02 }}
+              className="p-6 rounded-3xl bg-card/60 backdrop-blur-lg border border-border/40 card-hover h-full flex flex-col shadow-lg card-3d"
+              whileHover={{ 
+                scale: 1.02,
+                rotateX: 5,
+                rotateY: -5,
+                z: 10
+              }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              style={{ transformStyle: "preserve-3d" }}
             >
               <div className="flex items-center mb-4">
                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-4">
@@ -122,9 +140,15 @@ const AboutSection = () => {
           {/* Professional Philosophy */}
           <ScrollAnimationWrapper animation="rotate" delay={0.5} className="h-full">
             <motion.div 
-              className="p-6 rounded-lg bg-card border border-border card-hover h-full flex flex-col"
-              whileHover={{ scale: 1.02 }}
+              className="p-6 rounded-3xl bg-card/60 backdrop-blur-lg border border-border/40 card-hover h-full flex flex-col shadow-lg card-3d"
+              whileHover={{ 
+                scale: 1.02,
+                rotateX: 5,
+                rotateY: -5,
+                z: 10
+              }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              style={{ transformStyle: "preserve-3d" }}
             >
               <div className="flex items-center mb-4">
                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-4">

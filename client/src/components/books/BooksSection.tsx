@@ -1,14 +1,16 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import TabGroup from "@/components/ui/TabGroup";
 import BookCard from "@/components/ui/BookCard";
+import BookCardSkeleton from "@/components/ui/BookCardSkeleton";
 import { technicalBooks, neuroscienceBooks, philosophyBooks, productivityBooks } from "@/lib/data";
 
 type BookCategory = "technical" | "neuroscience" | "philosophy" | "productivity";
 
 const BooksSection = () => {
   const [activeTab, setActiveTab] = useState<BookCategory>("technical");
+  const [isLoading, setIsLoading] = useState(true);
   const sectionRef = useRef<HTMLElement>(null);
   const isVisible = useIntersectionObserver(sectionRef, { threshold: 0.1 });
 
@@ -40,6 +42,15 @@ const BooksSection = () => {
 
   const books = getBooksForCategory(activeTab);
 
+  useEffect(() => {
+    // Simulate loading for better UX
+    setIsLoading(true);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [activeTab]);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -51,9 +62,9 @@ const BooksSection = () => {
   };
 
   return (
-    <section id="books" ref={sectionRef} className="py-20 md:py-32 bg-secondary">
+    <section id="books" ref={sectionRef} className="py-20 md:py-32 bg-secondary/30 backdrop-blur-sm relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Books & Reading</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center gradient-text">Books & Reading</h2>
         <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-12">
           Books I've read and recommend for software engineers, AI researchers, and technology enthusiasts.
         </p>
@@ -68,9 +79,16 @@ const BooksSection = () => {
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
         >
-          {books.map((book) => (
-            <BookCard key={book.id} book={book} />
-          ))}
+          {isLoading ? (
+            // Show skeleton loaders while loading
+            Array.from({ length: 4 }).map((_, index) => (
+              <BookCardSkeleton key={`skeleton-${index}`} />
+            ))
+          ) : (
+            books.map((book) => (
+              <BookCard key={book.id} book={book} />
+            ))
+          )}
         </motion.div>
       </div>
     </section>

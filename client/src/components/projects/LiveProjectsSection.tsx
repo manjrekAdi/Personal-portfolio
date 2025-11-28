@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight, ExternalLink, Github } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { Button } from "@/components/ui/button";
 import { liveProjects } from "@/lib/data";
+import LazyImage from "@/components/ui/LazyImage";
 
 const LiveProjectsSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -19,7 +20,7 @@ const LiveProjectsSection = () => {
   };
 
   return (
-    <section id="live-projects" ref={sectionRef} className="py-20 md:py-32 bg-background">
+    <section id="live-projects" ref={sectionRef} className="py-20 md:py-32 bg-background/30 backdrop-blur-sm relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Live Projects</h2>
         <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-12">
@@ -33,7 +34,7 @@ const LiveProjectsSection = () => {
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="overflow-hidden rounded-lg shadow-xl">
+          <div className="overflow-hidden rounded-3xl shadow-xl">
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -41,7 +42,7 @@ const LiveProjectsSection = () => {
               {liveProjects.map((project, index) => (
                 <div
                   key={index}
-                  className="w-full flex-shrink-0 p-6 md:p-10 bg-card rounded-lg"
+                  className="w-full flex-shrink-0 p-6 md:p-10 bg-card/60 backdrop-blur-lg rounded-3xl border border-border/40 shadow-lg"
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
                     <div className="order-2 md:order-1">
@@ -71,24 +72,35 @@ const LiveProjectsSection = () => {
                       </div>
                     </div>
                     <div className="order-1 md:order-2">
-                      <div className="w-full h-64 md:h-96 bg-muted rounded-lg flex items-center justify-center overflow-hidden">
-                        <svg
-                          className="w-1/3 h-1/3 text-muted-foreground opacity-50"
-                          fill="none"
-                          height="24"
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
-                          width="24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M4 3.1A2.1 2.1 0 0 1 6.1 1h11.8A2.1 2.1 0 0 1 20 3.1v14.8a2.1 2.1 0 0 1-2.1 2.1h-4.9V23l-3-3-3 3v-3H6.1A2.1 2.1 0 0 1 4 17.9z" />
-                          <path d="M8 12h8" />
-                          <path d="M8 8h8" />
-                          <path d="M8 16h5.5" />
-                        </svg>
+                      <div className="w-full h-64 md:h-96 bg-muted/50 backdrop-blur-sm rounded-3xl overflow-hidden border border-border/30">
+                        {(project as any).image ? (
+                          <LazyImage
+                            src={(project as any).image}
+                            alt={project.title}
+                            className="w-full h-full object-cover rounded-3xl"
+                            skeletonClassName="rounded-3xl"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center">
+                            <svg
+                              className="w-1/3 h-1/3 text-muted-foreground opacity-50"
+                              fill="none"
+                              height="24"
+                              stroke="currentColor"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              viewBox="0 0 24 24"
+                              width="24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path d="M4 3.1A2.1 2.1 0 0 1 6.1 1h11.8A2.1 2.1 0 0 1 20 3.1v14.8a2.1 2.1 0 0 1-2.1 2.1h-4.9V23l-3-3-3 3v-3H6.1A2.1 2.1 0 0 1 4 17.9z" />
+                              <path d="M8 12h8" />
+                              <path d="M8 8h8" />
+                              <path d="M8 16h5.5" />
+                            </svg>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -99,14 +111,14 @@ const LiveProjectsSection = () => {
 
           {/* Carousel Controls */}
           <button
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 md:-translate-x-6 bg-background text-primary p-2 rounded-full shadow-lg hover:bg-primary hover:text-white transition-colors z-10"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 md:-translate-x-6 bg-background/80 backdrop-blur-md border border-border/50 text-primary p-2 rounded-full shadow-lg hover:bg-primary/80 hover:text-white transition-all z-10"
             onClick={goToPrevSlide}
             aria-label="Previous project"
           >
             <ChevronLeft size={24} />
           </button>
           <button
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 md:translate-x-6 bg-background text-primary p-2 rounded-full shadow-lg hover:bg-primary hover:text-white transition-colors z-10"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 md:translate-x-6 bg-background/80 backdrop-blur-md border border-border/50 text-primary p-2 rounded-full shadow-lg hover:bg-primary/80 hover:text-white transition-all z-10"
             onClick={goToNextSlide}
             aria-label="Next project"
           >

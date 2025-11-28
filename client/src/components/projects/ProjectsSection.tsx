@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "@/components/ui/ProjectCard";
+import ProjectCardSkeleton from "@/components/ui/ProjectCardSkeleton";
 import { cn } from "@/lib/utils";
 import { projects } from "@/lib/data";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -10,6 +11,7 @@ type ProjectCategory = "all" | "fullstack" | "aiml" | "research" | "systems";
 
 const ProjectsSection = () => {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>("all");
+  const [isLoading, setIsLoading] = useState(true);
 
   const categories: { value: ProjectCategory; label: string }[] = [
     { value: "all", label: "All Projects" },
@@ -24,6 +26,15 @@ const ProjectsSection = () => {
     return project.categories.includes(activeCategory);
   });
 
+  useEffect(() => {
+    // Simulate loading for better UX
+    setIsLoading(true);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [activeCategory]);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -36,10 +47,10 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="py-20 md:py-32 bg-secondary overflow-hidden relative">
+    <section id="projects" className="py-20 md:py-32 bg-secondary/30 backdrop-blur-sm overflow-hidden relative">
       <div className="container mx-auto px-4 md:px-6">
         <ScrollAnimationWrapper animation="zoom">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center gradient-text">Projects</h2>
           <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-12">
             A selection of my recent work across various domains and technologies.
           </p>
@@ -52,10 +63,10 @@ const ProjectsSection = () => {
               <motion.button
                 key={category.value}
                 className={cn(
-                  "px-4 py-2 rounded-md transition-all duration-300",
+                  "px-4 py-2 rounded-2xl transition-all duration-300",
                   activeCategory === category.value
-                    ? "bg-primary text-white scale-105"
-                    : "bg-card hover:bg-muted"
+                    ? "bg-primary/90 backdrop-blur-sm text-white scale-105 shadow-lg"
+                    : "bg-card/60 backdrop-blur-sm hover:bg-card/80 border border-border/50"
                 )}
                 onClick={() => setActiveCategory(category.value)}
                 whileHover={{ scale: 1.05 }}
@@ -83,16 +94,23 @@ const ProjectsSection = () => {
           animate="visible"
           layout
         >
-          {filteredProjects.map((project, index) => (
-            <ScrollAnimationWrapper
-              key={project.id}
-              animation={index % 3 === 0 ? "fade" : index % 3 === 1 ? "scale" : "rotate"}
-              delay={index * 0.1}
-              className="h-full"
-            >
-              <ProjectCard project={project} />
-            </ScrollAnimationWrapper>
-          ))}
+          {isLoading ? (
+            // Show skeleton loaders while loading
+            Array.from({ length: 6 }).map((_, index) => (
+              <ProjectCardSkeleton key={`skeleton-${index}`} />
+            ))
+          ) : (
+            filteredProjects.map((project, index) => (
+              <ScrollAnimationWrapper
+                key={project.id}
+                animation={index % 3 === 0 ? "fade" : index % 3 === 1 ? "scale" : "rotate"}
+                delay={index * 0.1}
+                className="h-full"
+              >
+                <ProjectCard project={project} />
+              </ScrollAnimationWrapper>
+            ))
+          )}
         </motion.div>
 
         {/* Decorative Elements */}

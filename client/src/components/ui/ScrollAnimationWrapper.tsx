@@ -44,7 +44,8 @@ const ScrollAnimationWrapper = ({
       opacity: useTransform(smoothProgress, [0, threshold, 1], [0, 1, 1])
     },
     parallax: {
-      y: useTransform(smoothProgress, [0, 1], [100, -100])
+      y: useTransform(smoothProgress, [0, 1], [150, -150]),
+      opacity: useTransform(smoothProgress, [0, 0.3, 0.7, 1], [0.3, 1, 1, 0.3])
     },
     scale: {
       scale: useTransform(smoothProgress, [0, threshold, 1], [0.6, 1, 1]),

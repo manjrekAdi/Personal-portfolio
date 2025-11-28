@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { useTheme } from "@/providers/ThemeProvider";
 
 interface NavItem {
   label: string;
@@ -23,7 +22,6 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
-  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,8 +63,8 @@ const Header = () => {
       transition={{ duration: 0.6, ease: [0.17, 0.55, 0.55, 1] }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-sm shadow-md"
-          : "bg-background/50 backdrop-blur-none"
+          ? "bg-background/80 backdrop-blur-md shadow-lg border-b border-border/50"
+          : "bg-background/40 backdrop-blur-sm border-b border-border/30"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center py-4">
@@ -98,40 +96,6 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Theme Toggle */}
-        <motion.button
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="p-2 rounded-full bg-secondary hover:bg-primary hover:text-secondary-foreground transition-all"
-          aria-label="Toggle theme"
-        >
-          <AnimatePresence mode="wait" initial={false}>
-            {theme === "dark" ? (
-              <motion.div
-                key="dark"
-                initial={{ rotate: -180, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 180, opacity: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Moon size={18} />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="light"
-                initial={{ rotate: 180, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: -180, opacity: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Sun size={18} />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.button>
-
         {/* Mobile Menu Button */}
         <motion.button
           initial={{ opacity: 0, scale: 0.8 }}
@@ -154,7 +118,7 @@ const Header = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-secondary border-t border-border py-2"
+            className="md:hidden bg-background/80 backdrop-blur-md border-t border-border/50 py-2"
       >
         <div className="container mx-auto px-4 flex flex-col space-y-3">
               {navItems.map((item, index) => (

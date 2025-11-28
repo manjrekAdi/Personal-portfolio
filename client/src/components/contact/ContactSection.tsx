@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
-import { Mail, Phone, MapPin, Linkedin, Github, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Github, Send, Globe, Loader2 } from "lucide-react";
 import ScrollAnimationWrapper from "@/components/ui/ScrollAnimationWrapper";
 
 interface ContactFormValues {
@@ -89,10 +89,10 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-32 bg-background relative overflow-hidden">
+    <section id="contact" className="py-20 md:py-32 bg-background/30 backdrop-blur-sm relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <ScrollAnimationWrapper animation="zoom">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Contact Me</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center gradient-text">Contact Me</h2>
           <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-12">
             Have a question or want to work together? Feel free to reach out!
           </p>
@@ -102,9 +102,15 @@ const ContactSection = () => {
           {/* Contact Form */}
           <ScrollAnimationWrapper animation="fade" delay={0.2}>
             <motion.div
-              className="bg-card rounded-lg p-6 border border-border"
-              whileHover={{ scale: 1.01 }}
+              className="bg-card/60 backdrop-blur-lg rounded-3xl p-6 border border-border/40 shadow-lg card-3d"
+              whileHover={{ 
+                scale: 1.01,
+                rotateX: 5,
+                rotateY: -5,
+                z: 10
+              }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              style={{ transformStyle: "preserve-3d" }}
             >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -211,8 +217,18 @@ const ContactSection = () => {
                       type="submit"
                       className="w-full"
                       disabled={isSubmitting}
+                      aria-busy={isSubmitting}
                     >
-                      {isSubmitting ? "Sending..." : "Send Message"} <Send size={16} className="ml-2" />
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 size={16} className="mr-2 animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          Send Message <Send size={16} className="ml-2" />
+                        </>
+                      )}
                     </Button>
                   </motion.div>
                 </motion.div>
@@ -223,9 +239,15 @@ const ContactSection = () => {
           {/* Contact Information */}
           <ScrollAnimationWrapper animation="fade" delay={0.4}>
             <motion.div
-              className="bg-card rounded-lg p-6 border border-border"
-              whileHover={{ scale: 1.01 }}
+              className="bg-card/60 backdrop-blur-lg rounded-3xl p-6 border border-border/40 shadow-lg card-3d"
+              whileHover={{ 
+                scale: 1.01,
+                rotateX: 5,
+                rotateY: -5,
+                z: 10
+              }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              style={{ transformStyle: "preserve-3d" }}
             >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -256,14 +278,20 @@ const ContactSection = () => {
                   { 
                     icon: Linkedin, 
                     title: "LinkedIn",
-                    content: "linkedin.com/in/m-adi05",
-                    link: "https://www.linkedin.com/in/m-adi05/"
+                    content: "linkedin.com/in/aditya-manjrekar-213b56275",
+                    link: "https://www.linkedin.com/in/aditya-manjrekar-213b56275/"
                   },
                   {
                     icon: Github,
                     title: "GitHub",
                     content: "github.com/manjrekAdi",
                     link: "https://github.com/manjrekAdi"
+                  },
+                  {
+                    icon: Globe,
+                    title: "Website",
+                    content: "adityacodesdev.vercel.app",
+                    link: "https://adityacodesdev.vercel.app"
                   }
                 ].map((item, index) => (
                   <motion.div

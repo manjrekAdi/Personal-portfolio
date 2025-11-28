@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Book } from "@/lib/data";
 import { Star, StarHalf } from "lucide-react";
+import LazyImage from "@/components/ui/LazyImage";
 
 interface BookCardProps {
   book: Book;
@@ -41,25 +42,42 @@ const BookCard = ({ book }: BookCardProps) => {
 
   return (
     <motion.div
-      className="bg-card rounded-lg overflow-hidden border border-border card-hover"
+      className="bg-card/60 backdrop-blur-lg rounded-3xl overflow-hidden border border-border/40 card-hover shadow-lg card-3d"
       variants={itemVariants}
+      whileHover={{ 
+        rotateX: 5,
+        rotateY: -5,
+        z: 10
+      }}
+      style={{ transformStyle: "preserve-3d" }}
     >
-      <div className="h-56 overflow-hidden bg-muted flex items-center justify-center">
-        <svg
-          className="w-1/3 h-1/3 text-muted-foreground opacity-30"
-          fill="none"
-          height="24"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M2 6c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Z" />
-          <path d="M2 6h20" />
-        </svg>
+      <div className="h-56 overflow-hidden bg-muted">
+        {book.image ? (
+          <LazyImage
+            src={book.image}
+            alt={`${book.title} by ${book.author}`}
+            className="w-full h-full object-cover"
+            skeletonClassName="rounded-none"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center">
+            <svg
+              className="w-1/3 h-1/3 text-muted-foreground opacity-30"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M2 6c0-1.1.9-2 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Z" />
+              <path d="M2 6h20" />
+            </svg>
+          </div>
+        )}
       </div>
       <div className="p-4">
         <h3 className="text-lg font-semibold mb-1">{book.title}</h3>

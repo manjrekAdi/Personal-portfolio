@@ -44,44 +44,6 @@
     --radius: 0.5rem;
   }
 
-  .light {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
- 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
- 
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 222.2 84% 4.9%;
-    --sidebar-primary: 217.2 91.2% 59.8%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 217.2 91.2% 59.8%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 214.3 31.8% 91.4%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-
-    --primary: 217.2 91.2% 45.8%;
-    --primary-foreground: 210 40% 98%;
- 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
- 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
- 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
- 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
- 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 217.2 91.2% 45.8%;
-  }
 }
 
 @layer base {
@@ -96,9 +58,6 @@
     scroll-behavior: smooth;
   }
 
-  .light body {
-    background-image: radial-gradient(rgba(59, 130, 246, 0.1) 2px, transparent 2px);
-  }
 }
 
 @layer components {
@@ -121,11 +80,25 @@
   }
 
   .card-hover:hover {
-    @apply transform -translate-y-1 shadow-lg shadow-primary/20;
+    @apply transform -translate-y-1 shadow-xl shadow-primary/20;
+    background: rgba(var(--card), 0.9);
+  }
+
+  /* Glassmorphism utilities */
+  .glass {
+    @apply bg-card/80 backdrop-blur-md border border-border/50;
+  }
+
+  .glass-light {
+    @apply bg-card/60 backdrop-blur-sm border border-border/30;
+  }
+
+  .glass-strong {
+    @apply bg-card/90 backdrop-blur-lg border border-border/70;
   }
 
   .progress-bar {
-    @apply relative h-2 rounded-full overflow-hidden bg-muted;
+    @apply relative h-3 rounded-full overflow-hidden bg-muted/50 backdrop-blur-sm border border-border/30;
   }
 
   .progress-fill {
@@ -143,5 +116,83 @@
 
   .timeline-dot {
     @apply absolute w-3 h-3 rounded-full bg-primary left-[0.9375rem] md:left-1/2 md:-ml-1.5 top-6 z-10;
+  }
+
+  /* Hero button glass effects */
+  .hero-button-glass {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  }
+
+  .hero-button-glass:hover {
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2),
+                0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+                0 0 20px rgba(59, 130, 246, 0.3);
+  }
+
+  /* Gradient text effects */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent;
+    background-size: 200% 100%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Section dividers with patterns */
+  .section-divider {
+    @apply relative py-16 overflow-hidden;
+  }
+
+  .section-divider::before {
+    content: '';
+    @apply absolute top-0 left-0 right-0 h-px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--primary) / 0.3) 20%,
+      hsl(var(--primary) / 0.5) 50%,
+      hsl(var(--primary) / 0.3) 80%,
+      transparent
+    );
+  }
+
+  .section-divider::after {
+    content: '';
+    @apply absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-32;
+    background: radial-gradient(circle, hsl(var(--primary) / 0.2) 0%, transparent 70%);
+    filter: blur(40px);
+  }
+
+  /* 3D card transforms */
+  .card-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+  }
+
+  .card-3d:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateZ(10px);
+  }
+
+  /* Parallax depth layers */
+  .parallax-layer-1 {
+    transform: translateZ(0);
+  }
+
+  .parallax-layer-2 {
+    transform: translateZ(-100px) scale(1.1);
+  }
+
+  .parallax-layer-3 {
+    transform: translateZ(-200px) scale(1.2);
   }
 }

@@ -9,6 +9,7 @@ import ExperienceSection from "@/components/experience/ExperienceSection";
 import ResumeSection from "@/components/resume/ResumeSection";
 import ContactSection from "@/components/contact/ContactSection";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
+import SectionDivider from "@/components/ui/SectionDivider";
 
 const Home = () => {
   useEffect(() => {
@@ -33,25 +34,37 @@ const Home = () => {
         <HeroSection />
         </AnimateOnScroll>
         
+        <SectionDivider />
+        
         <AnimateOnScroll delay={0.2}>
         <AboutSection />
         </AnimateOnScroll>
+        
+        <SectionDivider />
         
         <AnimateOnScroll delay={0.3}>
         <ProjectsSection />
         </AnimateOnScroll>
         
+        <SectionDivider />
+        
         <AnimateOnScroll delay={0.3}>
         <SkillsSection />
         </AnimateOnScroll>
+        
+        <SectionDivider />
         
         <AnimateOnScroll delay={0.4}>
         <ExperienceSection />
         </AnimateOnScroll>
         
+        <SectionDivider />
+        
         <AnimateOnScroll delay={0.5}>
           <ResumeSection />
         </AnimateOnScroll>
+        
+        <SectionDivider />
         
         <AnimateOnScroll delay={0.6}>
         <ContactSection />

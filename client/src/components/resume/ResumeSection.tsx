@@ -20,7 +20,7 @@ const ResumeSection = () => {
   };
 
   return (
-    <section id="resume" className="py-16 md:py-24 bg-background/50">
+    <section id="resume" className="py-16 md:py-24 bg-background/30 backdrop-blur-sm relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

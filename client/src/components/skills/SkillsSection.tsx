@@ -44,10 +44,10 @@ const SkillsSection = () => {
   const skills = getSkillsForCategory(activeTab);
 
   return (
-    <section id="skills" className="py-20 md:py-32 bg-secondary relative overflow-hidden">
+    <section id="skills" className="py-20 md:py-32 bg-secondary/30 backdrop-blur-sm relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <ScrollAnimationWrapper animation="zoom">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Skills</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center gradient-text">Skills</h2>
           <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-12">
             A comprehensive overview of my technical skills and proficiencies.
           </p>
@@ -61,9 +61,15 @@ const SkillsSection = () => {
         {/* Skills Content */}
         <ScrollAnimationWrapper animation="scale" delay={0.3}>
           <motion.div 
-            className="p-6 rounded-lg bg-card border border-border mt-8"
+            className="p-6 rounded-3xl bg-card/60 backdrop-blur-lg border border-border/40 mt-8 shadow-lg card-3d"
             layout
             transition={{ duration: 0.3 }}
+            whileHover={{ 
+              rotateX: 5,
+              rotateY: -5,
+              z: 10
+            }}
+            style={{ transformStyle: "preserve-3d" }}
           >
             <motion.div 
               className="space-y-6"
